@@ -60,7 +60,7 @@ class SequentialAlgorithm:
                 self.subgraphs.append(subgraph)
                 array_index_temp = list(self.array_index - set(item for row in self.subgraphs for item in row))
             else:
-                self.subgraphs.append(array_index_temp)
+                self.subgraphs.append(self.better_group_size)
 
         return self.subgraphs
 
