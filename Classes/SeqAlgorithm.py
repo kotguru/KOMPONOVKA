@@ -35,7 +35,7 @@ class SequentialAlgorithm:
 
     def start_seq(self, input_n):
         self.subgraphs = list()
-        self.n = input_n
+        self.n = sorted(input_n, reverse=True)
         array_index_temp = list(self.array_index)
 
         for group_size in self.n:
