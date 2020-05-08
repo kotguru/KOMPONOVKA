@@ -6,6 +6,7 @@ import itertools
 
 N_new = []
 
+
 def combinations():
     n = 30
     rrange = list(range(3, 8))  # (min; max+1)
