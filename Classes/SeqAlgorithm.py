@@ -33,13 +33,21 @@ class SequentialAlgorithm:
 
         self.__n = input_n
 
+    def better_group_size(self, array):
+        tmp_array = []
+        length = len(array)
+        for i in range(len(self.n)):
+            tmp_array.append(np.math.fabs(self.n[i] - length))
+        return tmp_array.index(min(tmp_array))
+
     def start_seq(self, input_n):
         self.subgraphs = list()
-        self.n = sorted(input_n, reverse=True)
+        self.n = input_n
+
         array_index_temp = list(self.array_index)
 
         for group_size in self.n:
-            if len(array_index_temp) != group_size:
+            if len(array_index_temp) != self.better_group_size(array_index_temp):
                 index = self.calculation.index_of_min_vdegree(array_index_temp)
                 subgraph = self.calculation.create_subgraph(index, array_index_temp)
 
