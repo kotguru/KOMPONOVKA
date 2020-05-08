@@ -4,16 +4,16 @@ import csv
 import numpy as np
 import itertools
 
-N = []
+N_new = []
 
 def combinations():
     n = 30
-    rrange = list(range(3, 8))
+    rrange = list(range(3, 8))  # (min; max+1)
     for j in range(1, 30):
         tools = ([i for i in itertools.combinations_with_replacement(rrange, j)
                   if sum(i) == n])
         if len(tools) != 0:
-            N.append(tools)
+            N_new.append(tools)
 
 
 N = ([3, 6, 7, 7, 7], [4, 5, 7, 7, 7], [4, 6, 6, 7, 7], [5, 5, 6, 7, 7], [5, 6, 6, 6, 7], [6, 6, 6, 6, 6], [3, 3,
